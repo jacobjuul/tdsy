@@ -1,0 +1,31 @@
+<%= form_for @user, url: {action: "create"}, html: {class:'signupForm'} do |f| %>
+<%= f.label :first_name, 'Fornavn' %>
+<%= f.text_field :first_name %>
+
+<%= f.label :last_name, 'Efternavn' %>
+<%= f.text_field :last_name %>
+
+<%= f.label :position, 'Stilling' %>
+<%= f.text_field :position %>
+
+<%= f.label :telephone, 'Telefon' %>
+<%= f.telephone_field :telephone %>
+
+<%= f.label :email, 'Email' %>
+<%= f.email_field :email %>
+
+<%= f.label :os, 'Mac' %>
+<%= f.radio_button :os, "OSX" %>
+<%= f.label :os, 'Linux' %>
+<%= f.radio_button :os, "Linux" %>
+<%= f.label :os, 'Windows' %>
+<%= f.radio_button :os, "Windows" %>
+
+<%= f.label :communication, 'Skype' %>
+<%= f.radio_button :communication, "Skype" %>
+<%= f.label :communication, 'Linc' %>
+<%= f.radio_button :communication, "Linc" %>
+
+<%= f.checkbox :communication, "Linc" %>
+<%= f.submit "Deltag" %>
+<% end %>
