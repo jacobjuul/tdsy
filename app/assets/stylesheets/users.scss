@@ -9,6 +9,23 @@
     box-sizing: border-box;
 }
 
+.phone {
+    float: right;
+    width: calc(50% - 3px); 
+    box-sizing: border-box;
+}
+
+.position {
+    float: left;
+    width: calc(50% - 3px); 
+    box-sizing: border-box;
+}
+
+.email {
+    display: block;
+    width: 100%;
+}
+
 #iPad {
     max-width: 100%;
 }

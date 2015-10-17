@@ -16,6 +16,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def admin
+    @users = User.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @users.to_csv, filename: "users-#{Date.today}.csv" }
+      format.xls #{ send_data @users.to_csv(col_sep: "\t"), filename: "users-#{Date.today}.xls" }
+    end
+  end
+
   private
     def user_params
       params.require(:user).permit(:first_name, :last_name, :position,
