@@ -1,7 +1,11 @@
 @import "bootstrap";
+@font-face {
+    font-family: 'TDC';
+    src: font-url('/assets/TDC_Rg.ttf') format('truetype')        
+}
 
 
-
+// Forms
 #error_explanation {
   color: red;
   ul {
@@ -15,4 +19,32 @@
   .form-control {
     color: $state-danger-text;
   }
+}
+
+// Navigation
+.navbar {
+    height: 60px;
+    border-radius: 0px;
+    margin-bottom: 20px;
+}
+
+.nav-link {
+    padding: 0 13px 0 10px;
+    margin: 3px 0;
+    font-size: 18px;
+    position: relative;
+    color: white !important;
+    float: left;
+    text-decoration: none;
+    display: inline-block;
+    
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+    font-family: 'Verdana';
+
+}
+
+.active {
+    text-decoration: underline;  
 }

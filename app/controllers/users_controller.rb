@@ -9,7 +9,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      render 'index'
+      flash[:success] = "Du deltager nu i konkurrencen"
+      redirect_to users_path
     else
       render 'new'
     end
