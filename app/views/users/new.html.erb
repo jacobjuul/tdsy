@@ -1,11 +1,14 @@
 <div class="row">
     <div class="col-md-6">
         <%= form_for @user, url: {action: "create"}, html: {class:''} do |f| %>
-        <fieldset class="form-group">
+        <!-- Show error messages on invalid submissions -->
+        <%= render 'shared/error_messages' %>
+
+        <fieldset class="form-group firstName">
             <%= f.label :first_name, 'Fornavn' %>
             <%= f.text_field :first_name, class: 'form-control' %>
         </fieldset>
-        <fieldset class="form-group">
+        <fieldset class="form-group lastName">
             <%= f.label :last_name, 'Efternavn' %>
             <%= f.text_field :last_name, class: 'form-control' %>
         </fieldset>
@@ -26,24 +29,20 @@
             <small class="text-muted">Vi kontakter dig på denne email, hvis du vinder.</small>
         </fieldset>
         <fieldset>
-            <p>Vælg dit foretrukne OS</p>
-            
-            
+            <h4>Vælg dit foretrukne OS</h4>
             <label class="radio-inline">
                 <%= f.radio_button :os, "OSX", class: '' %>Mac
             </label>
-            
             <label class="radio-inline">
                 <%= f.radio_button :os, "Linux", class: '' %>Linux
             </label>
-            
             <label class="radio-inline">
                 <%= f.radio_button :os, "Windows", class: '' %>Windows
             </label>
-            
         </fieldset>
         
         <fieldset class="form-group">
+        <p>Vælg dit foretrukne OS</p>
             <label class="radio-inline">
                 <%= f.radio_button :communication, "Skype", class: '' %> Skype
             </label>
@@ -51,7 +50,11 @@
                 <%= f.radio_button :communication, "Linc", class: '' %> Linc
             </label>
         </fieldset>
-        <%= f.submit "Deltag", class: 'btn btn-primary disabled'%>
+
+        <%= f.submit "Deltag", class: 'btn btn-primary disabled', id: 'submit' %>
+        <label class="checkbox-inline">
+            <input id="acceptConditions" type="checkbox"> Accepter betingelserne
+        </label>
         <% end %>
     </div>
     <div class="col-md-6">

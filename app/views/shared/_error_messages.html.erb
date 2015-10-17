@@ -1,0 +1,8 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      Der er <%= @user.errors.count %> fejl.
+    </div>
+    
+  </div>
+<% end %>
