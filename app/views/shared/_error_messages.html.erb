@@ -3,6 +3,11 @@
     <div class="alert alert-danger">
       Der er <%= @user.errors.count %> fejl.
     </div>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
     
   </div>
 <% end %>
