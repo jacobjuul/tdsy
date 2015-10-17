@@ -16,6 +16,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def import
+    User.import(params[:file])
+    redirect_to admin_path, notice: "Products imported."
+  end
+
   def admin
     @users = User.all
     respond_to do |format|

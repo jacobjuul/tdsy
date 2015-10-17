@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root 'users#new'
   get '/admin', to: 'users#admin'
-  # You can have the root of your site routed with "root"
-  resources :users
 
+  # You can have the root of your site routed with "root"
+  resources :users do
+    collection { post :import }
+  end 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
