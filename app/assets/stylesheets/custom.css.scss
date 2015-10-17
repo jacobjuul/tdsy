@@ -1,7 +1,7 @@
 @import "bootstrap";
 @font-face {
     font-family: 'TDC';
-    src: font-url('/assets/TDC_Rg.ttf') format('truetype')        
+    src: font-url('TDC_Rg.ttf') format('truetype')        
 }
 
 
@@ -41,7 +41,7 @@
     white-space: nowrap;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizelegibility;
-    font-family: 'Verdana';
+    font-family: 'TDC';
 
 }
 
