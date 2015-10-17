@@ -1,32 +1,60 @@
-
-<%= form_for @user, url: {action: "create"}, html: {class:'signupForm'} do |f| %>
-<%= f.label :first_name, 'Fornavn' %>
-<%= f.text_field :first_name %>
-
-<%= f.label :last_name, 'Efternavn' %>
-<%= f.text_field :last_name %>
-
-<%= f.label :position, 'Stilling' %>
-<%= f.text_field :position %>
-
-<%= f.label :telephone, 'Telefon' %>
-<%= f.telephone_field :telephone %>
-
-<%= f.label :email, 'Email' %>
-<%= f.email_field :email %>
-
-<%= f.label :os, 'Mac' %>
-<%= f.radio_button :os, "OSX" %>
-<%= f.label :os, 'Linux' %>
-<%= f.radio_button :os, "Linux" %>
-<%= f.label :os, 'Windows' %>
-<%= f.radio_button :os, "Windows" %>
-
-<%= f.label :communication, 'Skype' %>
-<%= f.radio_button :communication, "Skype" %>
-<%= f.label :communication, 'Linc' %>
-<%= f.radio_button :communication, "Linc" %>
-
-
-<%= f.submit "Deltag" %>
-<% end %>
+<div class="row">
+    <div class="col-md-6">
+        <%= form_for @user, url: {action: "create"}, html: {class:''} do |f| %>
+        <fieldset class="form-group">
+            <%= f.label :first_name, 'Fornavn' %>
+            <%= f.text_field :first_name, class: 'form-control' %>
+        </fieldset>
+        <fieldset class="form-group">
+            <%= f.label :last_name, 'Efternavn' %>
+            <%= f.text_field :last_name, class: 'form-control' %>
+        </fieldset>
+        <fieldset class="form-group">
+            <%= f.label :position, 'Stilling' %>
+            <%= f.text_field :position, class: 'form-control' %>
+        </fieldset>
+        <fieldset class="form-group">
+            <%= f.label :telephone, 'Telefon' %>
+            <div class="input-group">
+                <span class="input-group-addon">+45</span>
+                <%= f.telephone_field :telephone, class: 'form-control' %>
+            </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <%= f.label :email, 'Email' %>
+            <%= f.email_field :email, class: 'form-control', placeholder: 'Indtast din email' %>
+            <small class="text-muted">Vi kontakter dig på denne email, hvis du vinder.</small>
+        </fieldset>
+        <fieldset>
+            <p>Vælg dit foretrukne OS</p>
+            
+            
+            <label class="radio-inline">
+                <%= f.radio_button :os, "OSX", class: '' %>Mac
+            </label>
+            
+            <label class="radio-inline">
+                <%= f.radio_button :os, "Linux", class: '' %>Linux
+            </label>
+            
+            <label class="radio-inline">
+                <%= f.radio_button :os, "Windows", class: '' %>Windows
+            </label>
+            
+        </fieldset>
+        
+        <fieldset class="form-group">
+            <label class="radio-inline">
+                <%= f.radio_button :communication, "Skype", class: '' %> Skype
+            </label>
+            <label class="radio-inline">
+                <%= f.radio_button :communication, "Linc", class: '' %> Linc
+            </label>
+        </fieldset>
+        <%= f.submit "Deltag", class: 'btn btn-primary disabled'%>
+        <% end %>
+    </div>
+    <div class="col-md-6">
+        Status
+    </div>
+</div>
