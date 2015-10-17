@@ -7,13 +7,23 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
-      flash[:success] = "Du deltager nu i konkurrencen"
+    user = User.find_by(email: params[:user][:email].downcase)
+    
+    if user
+      user.assign_attributes(user_params)
+      user.save(validate: false)
+      flash[:success] = "Du deltager nu i konkurrencen222"
       redirect_to users_path
     else
-      render 'new'
+      @user = User.new(user_params)
+      if @user.save
+        flash[:success] = "Du deltager nu i konkurrencen"
+        redirect_to users_path
+      else
+        render 'new'
+      end
     end
+
   end
 
   def import
@@ -31,8 +41,8 @@ class UsersController < ApplicationController
   end
 
   private
-    def user_params
-      params.require(:user).permit(:first_name, :last_name, :position,
-                                   :email, :telephone, :os, :communication)
-    end
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :position,
+     :email, :telephone, :os, :communication)
+  end
 end

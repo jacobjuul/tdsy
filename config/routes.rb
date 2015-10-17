@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   root 'users#new'
   get '/admin', to: 'users#admin'
+
+  resources :clients do
+    collection { post :import }
+  end
 
   # You can have the root of your site routed with "root"
   resources :users do
