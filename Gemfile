@@ -4,6 +4,8 @@ gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 gem 'sass-rails', '~> 5.0'
+# Use twitter bootstrap 4
+gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 gem 'uglifier', '>= 1.3.0'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes

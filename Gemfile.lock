@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/twbs/bootstrap-rubygem
+  revision: 357ce5cb41b4d6a5dabe76e294e29380c47c7783
+  specs:
+    bootstrap (4.0.0.dev)
+      autoprefixer-rails (>= 5.2.1.3)
+      sass (>= 3.4.18)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -38,6 +46,9 @@ GEM
       tzinfo (~> 1.1)
     ansi (1.5.0)
     arel (6.0.3)
+    autoprefixer-rails (6.0.3)
+      execjs
+      json
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -175,6 +186,7 @@ GEM
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
     sqlite3 (1.3.10)
+    sqlite3 (1.3.10-x86-mingw32)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.1)
@@ -198,6 +210,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bootstrap!
   byebug
   guard
   guard-minitest
