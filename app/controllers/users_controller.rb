@@ -24,6 +24,7 @@ class UsersController < ApplicationController
       user.save(validate: false)
       flash[:success] = "Du deltager nu i konkurrencen222"
       redirect_to users_path
+      NotificationMailer.exsisting_account(user).deliver_now if user.persisted?
     else
       
       @user = User.new(user_params)

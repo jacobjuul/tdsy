@@ -1,5 +1,9 @@
-<h1>NotificationMailer#exsisting_account</h1>
+Hi
+<p>This is a notification to let you know that your client:</p>
+<%= @user.first_name + ' ' + @user.last_name %> 
+has just entered the TDC iPad competition. <br> <br>
+<strong>Contact information</strong> <br>
+email: <%= @user.email %>  <br>
+phonenumber: <%= @user.telephone %> <br>
 
-<p>
-  <%= @greeting %>, find me in app/views/notification_mailer/exsisting_account.html.erb
-</p>
+To see more info go to <a href="http://tdsy.herokuapp.com/users/<%= @user.id %>">http://tdsy.herokuapp.com/users/<%= @user.id %></a>
