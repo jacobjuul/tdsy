@@ -37,7 +37,7 @@
   <tbody>
   <% @contestants.each do |con| %>
     <tr>
-      <th><%= con.id %></th>
+      <th><%= link_to con.id, user_path(con.id) %></th>
       <td><%= con.first_name %></td>
       <td><%= con.last_name %></td>
       <td><%= con.position %></td>

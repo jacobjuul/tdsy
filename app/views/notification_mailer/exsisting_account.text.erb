@@ -1,0 +1,10 @@
+Hi
+This is a notification to let you know that your client:
+<%= @user.first_name + ' ' + @user.last_name %> has just
+entered the TDC iPad competition.
+Their email is:
+<%= @user.email %> 
+and their phonenumber is
+<%= @user.telephone %>
+
+To see more info go to http://tdsy.herokuapp.com/users/<%= @user.id %>

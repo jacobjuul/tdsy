@@ -6,15 +6,21 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
+
   def create
     user = User.find_by(email: params[:user][:email].downcase)
     
-    if user
+    # Skip validation if the email already exsists AND
+    # has a sales_manager connected
+    if user && user.sales_manager_email
       user.assign_attributes(position: user_params["position"],
                              telephone: user_params["telephone"],
                              os: user_params["os"], 
                              communication: user_params["communication"])
-      byebug
       user.save(validate: false)
       flash[:success] = "Du deltager nu i konkurrencen222"
       redirect_to users_path
