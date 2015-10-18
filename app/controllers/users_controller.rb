@@ -24,9 +24,12 @@ class UsersController < ApplicationController
       user.save(validate: false)
       flash[:success] = "Du deltager nu i konkurrencen222"
       redirect_to users_path
-      NotificationMailer.exsisting_account(user).deliver_now if user.persisted?
+
+      # Finally send an email to the sales_manager
+      user.send_manager_email if user.persisted?
     else
       
+      # If the entered email is not already in the system
       @user = User.new(user_params)
       if @user.save
         flash[:success] = "Du deltager nu i konkurrencen"
@@ -35,12 +38,11 @@ class UsersController < ApplicationController
         render 'new'
       end
     end
-
   end
 
   def import
     User.import(params[:file])
-    redirect_to admin_path, notice: "Products imported."
+    redirect_to admin_path, notice: "Clients imported."
   end
 
   def admin

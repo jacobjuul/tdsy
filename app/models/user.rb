@@ -38,5 +38,9 @@ class User < ActiveRecord::Base
     end
   end
 
+  def send_manager_email
+    NotificationMailer.exsisting_account(self).deliver_now
+  end
+
 
 end
