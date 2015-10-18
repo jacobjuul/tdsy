@@ -28,7 +28,6 @@ class UsersController < ApplicationController
       # Finally send an email to the sales_manager
       user.send_manager_email if user.persisted?
     else
-      
       # If the entered email is not already in the system
       @user = User.new(user_params)
       if @user.save
