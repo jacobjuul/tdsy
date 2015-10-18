@@ -1,13 +1,54 @@
-<p>
-  Download:
+
+<div class="card card-block">
+  <h4 class="card-title">Export all</h4>
+  <p class="card-text">Export contestants and exsisting clients. If an exsisting client
+  entered the competition using the same email, their record has been updated (with a new phonenumber; if applicaple; and information from the competition)</p>
   <%= link_to "CSV", admin_path(format: "csv") %> |
   <%= link_to "Excel", admin_path(format: "xls") %>
-</p>
+</div>
 
-<p>
-    Import:
-    <%= form_tag import_clients_path, multipart: true do %>
-  <%= file_field_tag :file %>
+<div class="card card-block">
+  <h4 class="card-title">Import exsisting clients</h4>
+  <p class="card-text">Import clients from exsisting CMS system. The file format should be CSV and be delimted by ";"</p>
+  <%= form_tag import_clients_path, multipart: true do %>
+  <%= file_field_tag :file %> <br>
   <%= submit_tag "Import" %>
 <% end %>
-</p>
+</div>
+
+<h3>A list of all contestants</h3>
+
+
+
+  <table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>id</th>
+      <th>first_name</th>
+      <th>last_name</th>
+      <th>position</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>os</th>
+      <th>communication</th>
+      <th>company</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @contestants.each do |con| %>
+    <tr>
+      <th><%= con.id %></th>
+      <td><%= con.first_name %></td>
+      <td><%= con.last_name %></td>
+      <td><%= con.position %></td>
+      <td><%= con.email %></td>
+      <td><%= con.telephone %></td>
+      <td><%= con.os %></td>
+      <td><%= con.communication %></td>
+      <td><%= con.company %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
