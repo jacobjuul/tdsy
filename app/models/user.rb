@@ -28,11 +28,11 @@ class User < ActiveRecord::Base
         row = row[0].split(';')
         id, first_name, last_name, email, country, profile_text, gender, phone, sales_manager, sales_manager_email = row || ''
         
-        user = User.create(id: id, first_name: first_name, last_name: last_name,
+        user = User.new(id: id, first_name: first_name, last_name: last_name,
           email: email, country: country, profile_text: profile_text,
           gender: gender, telephone: phone, sales_manager: sales_manager, sales_manager_email: sales_manager_email)
         puts user.errors.full_messages.join(".") if user.errors.any?
-        
+        user.save(validate: false)
       end
       counter += 1
     end
