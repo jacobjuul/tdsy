@@ -1,46 +1,11 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here:http://sass-lang.com/
 
-.firstName, 
-.lastName {
-    display: inline-block;  
-    width: calc(50% - 3px); 
-    box-sizing: border-box;
-}
-
-.company {
-    float: right;
-    width: calc(50% - 3px); 
-    box-sizing: border-box;
-}
-
-.position {
-    float: left;
-    width: calc(50% - 3px); 
-    box-sizing: border-box;
-}
-
-.phone {
-    display: block;
-    clear: left;
-    float: left;
-    width: calc(50% - 3px); 
-    box-sizing: border-box;
-}
-
-.email {
-    display: block;
-    width: 100%;
-    float: right;
-    width: calc(50% - 3px); 
-    box-sizing: border-box; 
-}
-
-#iPad {
-    max-width: 100%;
-}
-
-.clearfix {
-    clear: both;
-}
+.firstName,.lastName { display: inline-block; width: calc(50% - 3px); box-sizing: border-box; }
+.company { float: right; width: calc(50% - 3px); box-sizing: border-box; }
+.position { float: left; width: calc(50% - 3px); box-sizing: border-box; }
+.phone { display: block; clear: left; float: left; width: calc(50% - 3px); box-sizing: border-box; }
+.email { display: block; width: 100%; float: right; width: calc(50% - 3px); box-sizing: border-box; }
+#iPad { max-width: 100%; }
+.clearfix { clear: both; }
