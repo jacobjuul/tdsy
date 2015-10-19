@@ -4,13 +4,11 @@ class UserTest < ActiveSupport::TestCase
 
   # First setup the user
   def setup
-    @user = User.new(first_name: 'Jacob', last_name: 'Juul', email: 'jacob.juul@gmail.com', country: 'Denmark',
-                     profile_text: 'Lorem ipsum.', gender: 'M',  telephone: 20208105, sales_manager: 'Valentin', 
-                     sales_manager_email: 'email@sales.com', position: 'Manager', os: 'Mac', communication: 'skype',
-                     company: 'google')
+    @user = User.new(first_name: "Jacob", last_name: "Juul", email: "example@gmail.com", country: "Denmark",
+                     profile_text: "Lorem ipsum.", gender: "M",  telephone: "11111111", sales_manager: "Valentin", 
+                     sales_manager_email: "email@sales.com", position: "Manager", os: "Mac", communication: "skype",
+                     company: "google")
   end
-
-
 
   # test if the @user is a valid instance of the User class
   test "should be a valid user" do
@@ -36,5 +34,5 @@ class UserTest < ActiveSupport::TestCase
     @user.position = ""
     assert_not @user.valid?
   end 
-
+  
 end

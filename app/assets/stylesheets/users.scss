@@ -9,7 +9,7 @@
     box-sizing: border-box;
 }
 
-.phone {
+.company {
     float: right;
     width: calc(50% - 3px); 
     box-sizing: border-box;
@@ -21,11 +21,26 @@
     box-sizing: border-box;
 }
 
+.phone {
+    display: block;
+    clear: left;
+    float: left;
+    width: calc(50% - 3px); 
+    box-sizing: border-box;
+}
+
 .email {
     display: block;
     width: 100%;
+    float: right;
+    width: calc(50% - 3px); 
+    box-sizing: border-box; 
 }
 
 #iPad {
     max-width: 100%;
+}
+
+.preferences {
+    clear: both;
 }

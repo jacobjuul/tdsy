@@ -22,7 +22,7 @@ class UsersController < ApplicationController
                              os: user_params["os"], 
                              communication: user_params["communication"])
       user.save(validate: false)
-      flash[:success] = "Du deltager nu i konkurrencen222"
+      flash[:success] = "Du deltager nu i konkurrencen / opdateret"
       redirect_to users_path
 
       # Finally send an email to the sales_manager
