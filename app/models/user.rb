@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   validates :os, presence: true
   validates :communication, presence: true
   validates :company, presence: true
+validates :terms_of_service, acceptance: true
 
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|
