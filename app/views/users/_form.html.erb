@@ -30,7 +30,7 @@
                 <%= f.email_field :email, class: 'form-control', placeholder: 'Indtast din email' %>
                 <small class="text-muted">Vi kontakter dig på denne email, hvis du vinder.</small>
             </fieldset>
-            <fieldset>
+            <fieldset class="form-group clearfix">
                 <h4>Hvilken platform foretrækker du?</h4>
                 <label class="radio-inline">
                     <%= f.radio_button :os, "OSX", class: '' %>Mac
@@ -43,7 +43,7 @@
                 </label>
             </fieldset>
             
-            <fieldset class="form-group">
+            <fieldset class="form-group clearfix">
              <h4>Bruger du i dag primært Skype eller Lync</h4>
                 <label class="radio-inline">
                     <%= f.radio_button :communication, "Skype", class: '' %> Skype
