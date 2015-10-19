@@ -20,7 +20,8 @@ class UsersController < ApplicationController
       user.assign_attributes(position: user_params["position"],
                              telephone: user_params["telephone"],
                              os: user_params["os"], 
-                             communication: user_params["communication"])
+                             communication: user_params["communication"],
+                             company: user_params["company"])
       user.save(validate: false)
       flash[:success] = "Du deltager nu i konkurrencen / opdateret"
       redirect_to users_path
