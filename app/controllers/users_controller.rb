@@ -10,7 +10,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-
   def create
     user = User.find_by(email: params[:user][:email].downcase)
     
